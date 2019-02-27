@@ -36,6 +36,8 @@ namespace Csharp_Selenium_training
         {
             SeleniumSetMethods.SelectDropDown(driver, "TitleId", "Ms.", "Id");
             SeleniumSetMethods.EnterText(driver, "Initial", "salam", "Name");
+            Console.WriteLine(SeleniumGetMethods.GetTextDDL(driver, "TitleId", "Id"));
+            Console.WriteLine(SeleniumGetMethods.GetText(driver, "Initial", "Name"));
             SeleniumSetMethods.Click(driver, "Save", "Name");
 
 

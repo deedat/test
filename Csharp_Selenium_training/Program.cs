@@ -21,14 +21,12 @@ namespace Csharp_Selenium_training
 
             }
         }
-
-
-
+               
         [SetUp] // for calling the methode Initialize() immediately before each test
         public void Initialize()
         {
             // navigate to google chrome
-            driver.Navigate().GoToUrl("https://www.google.com/");
+            driver.Navigate().GoToUrl("http://executeautomation.com/demosite/index.html");
             Console.WriteLine("the url is openned");
         }
 
@@ -36,15 +34,14 @@ namespace Csharp_Selenium_training
         [Test]
         public void ExecuteTest()
         {
-            //find the element
-            IWebElement element = driver.FindElement(By.Name("q"));
+            SeleniumSetMethods.SelectDropDown(driver, "TitleId", "Ms.", "Id");
+            SeleniumSetMethods.EnterText(driver, "Initial", "salam", "Name");
+            SeleniumSetMethods.Click(driver, "Save", "Name");
 
-            // perform Ops
-            element.SendKeys("salam");
-            Console.WriteLine("execute peace");
+
         }
 
-        [Test]// Second test ()
+    [Test]// Second test ()
         public void SecondTest()
         {
             Console.WriteLine("the second test");

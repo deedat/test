@@ -6,14 +6,14 @@ namespace Csharp_Selenium_training
 {
     class SeleniumGetMethods
     {
-        public static string GetText( string nameOrIdContent, string elementType)
+        public static string GetText( string nameOrIdContent, PropertyType elementType)
         {
-            if (elementType == "Id")
+            if (elementType == PropertyType.Id)
             {
                 return PropretiesCollection.driver.FindElement(By.Id(nameOrIdContent)).GetAttribute("value");
             }
 
-            if (elementType == "Name")
+            if (elementType == PropertyType.Name)
             {
                 return PropretiesCollection.driver.FindElement(By.Name(nameOrIdContent)).GetAttribute("value");
             }
@@ -22,14 +22,14 @@ namespace Csharp_Selenium_training
 
 
 
-        public static string GetTextDDL( string nameOrIdContent, string elementType)
+        public static string GetTextDDL( string nameOrIdContent, PropertyType elementType)
         {
-            if (elementType == "Id")
+            if (elementType == PropertyType.Id)
             {                                                                       //liste             //LINQ           //Text when control with innertext                                
                 return new SelectElement(PropretiesCollection.driver.FindElement(By.Id(nameOrIdContent))).AllSelectedOptions.SingleOrDefault().Text;
             }
 
-            if (elementType == "Name")
+            if (elementType == PropertyType.Name)
             {
                 return new SelectElement(PropretiesCollection.driver.FindElement(By.Id(nameOrIdContent))).AllSelectedOptions.SingleOrDefault().Text;
             }

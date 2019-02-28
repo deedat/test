@@ -36,11 +36,11 @@ namespace Csharp_Selenium_training
         [Test]
         public void ExecuteTest()
         {
-            SeleniumSetMethods.SelectDropDown( "TitleId", "Ms.", "Id");
-            SeleniumSetMethods.EnterText( "Initial", "salam", "Name");
-            Console.WriteLine(SeleniumGetMethods.GetTextDDL( "TitleId", "Id"));
-            Console.WriteLine(SeleniumGetMethods.GetText( "Initial", "Name"));
-            SeleniumSetMethods.Click( "Save", "Name");
+            SeleniumSetMethods.SelectDropDown( "TitleId", "Ms.", PropertyType.Id);
+            SeleniumSetMethods.EnterText( "Initial", "salam", PropertyType.Name);
+            Console.WriteLine(SeleniumGetMethods.GetTextDDL( "TitleId", PropertyType.Id));
+            Console.WriteLine(SeleniumGetMethods.GetText( "Initial", PropertyType.Name));
+            SeleniumSetMethods.Click( "Save", PropertyType.Name);
 
 
         }

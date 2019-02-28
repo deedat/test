@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +28,8 @@ namespace Csharp_Selenium_training
             PropretiesCollection.driver = new ChromeDriver();
 
             // navigate to google chrome
-            PropretiesCollection.driver.Navigate().GoToUrl("http://executeautomation.com/demosite/index.html");
+            PropretiesCollection.driver.Navigate().GoToUrl("http://executeautomation.com/demosite/Login.html");
+
             Console.WriteLine("the url is openned");
         }
 
@@ -37,13 +38,23 @@ namespace Csharp_Selenium_training
         public void ExecuteTest()
         {
 
-            PageObject page = new PageObject();
+            PageLogin pageLogin = new PageLogin();
+            PagePrinciple pagePrinciple = pageLogin.Login("Mohamed", "Password");
+            pagePrinciple.SaveInfo("Mohamed", "BENIGHIL","Fahem");
+
+
+
+
+
+
+
+
             // it does not work for Drop/Down List (for now)
 
             // since page.TxtInitial is webelement, we can use sendkeys() methode
-            page.TxtInitial.SendKeys("wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww");
+            //page.TxtInitial.SendKeys("wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww");
 
-            page.BtnSave.Click();
+            //page.BtnSave.Click();
 
             //SeleniumSetMethods.SelectDropDown( "TitleId", "Ms.", PropertyType.Id);
             //SeleniumSetMethods.EnterText( "Initial", "salam", PropertyType.Name);

@@ -36,13 +36,21 @@ namespace Csharp_Selenium_training
         [Test]
         public void ExecuteTest()
         {
-            SeleniumSetMethods.SelectDropDown( "TitleId", "Ms.", PropertyType.Id);
-            SeleniumSetMethods.EnterText( "Initial", "salam", PropertyType.Name);
-            Console.WriteLine(SeleniumGetMethods.GetTextDDL( "TitleId", PropertyType.Id));
-            Console.WriteLine(SeleniumGetMethods.GetText( "Initial", PropertyType.Name));
-            SeleniumSetMethods.Click( "Save", PropertyType.Name);
 
+            PageObject page = new PageObject();
+            // it does not work for Drop/Down List (for now)
 
+            // since page.TxtInitial is webelement, we can use sendkeys() methode
+            page.TxtInitial.SendKeys("wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww");
+
+            page.BtnSave.Click();
+
+            //SeleniumSetMethods.SelectDropDown( "TitleId", "Ms.", PropertyType.Id);
+            //SeleniumSetMethods.EnterText( "Initial", "salam", PropertyType.Name);
+            //Console.WriteLine(SeleniumGetMethods.GetTextDDL( "TitleId", PropertyType.Id));
+            //Console.WriteLine(SeleniumGetMethods.GetText( "Initial", PropertyType.Name));
+            //SeleniumSetMethods.Click( "Save", PropertyType.Name);
+            
         }
 
     [Test]// Second test ()

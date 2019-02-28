@@ -4,9 +4,9 @@ using System.Linq;
 
 namespace Csharp_Selenium_training
 {
-    class SeleniumGetMethods
+    public static class  SeleniumGetMethods
     {
-        public static string GetText(IWebElement element)
+        public static string GetText(this IWebElement element)
         {
             return element.GetAttribute("value");
 
@@ -14,7 +14,7 @@ namespace Csharp_Selenium_training
 
 
 
-        public static string GetTextDDL(IWebElement element)
+        public static string GetTextDDL(this IWebElement element)
         {
 
             return new SelectElement(element).AllSelectedOptions.SingleOrDefault().Text;

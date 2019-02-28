@@ -31,10 +31,10 @@ namespace Csharp_Selenium_training
 
         public void SaveInfo(string initial,string firstName, string midleName)
         {
-            SeleniumSetMethods.EnterText(TxtInitial, initial);
-            SeleniumSetMethods.EnterText(TxtFirstName, firstName);
-            SeleniumSetMethods.EnterText(TxtMiddleName, midleName);
-            SeleniumSetMethods.Click(BtnSave);
+            TxtInitial.EnterText( initial);
+            TxtFirstName.EnterText( firstName);
+            TxtMiddleName.EnterText( midleName);
+            BtnSave.Click();
 
             //this.TxtInitial.SendKeys(initial);
             //this.TxtFirstName.SendKeys(firstName);

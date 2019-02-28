@@ -22,8 +22,8 @@ namespace Csharp_Selenium_training
 
         public PagePrinciple Login(string username, string password)
         {
-            this.TxtUserName.SendKeys(username);
-            this.TxtPassword.SendKeys(password);
+            SeleniumSetMethods.EnterText(TxtUserName, username);
+            SeleniumSetMethods.EnterText(TxtPassword, password);  
             this.BtnLogin.Submit();
             return new PagePrinciple();            
         }

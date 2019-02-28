@@ -38,6 +38,8 @@ namespace Csharp_Selenium_training
         public void ExecuteTest()
         {
 
+
+
             PageLogin pageLogin = new PageLogin();
             PagePrinciple pagePrinciple = pageLogin.Login("Mohamed", "Password");
             pagePrinciple.SaveInfo("Mohamed", "BENIGHIL","Fahem");

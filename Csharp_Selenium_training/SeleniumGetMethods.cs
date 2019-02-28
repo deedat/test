@@ -6,34 +6,18 @@ namespace Csharp_Selenium_training
 {
     class SeleniumGetMethods
     {
-        public static string GetText( string nameOrIdContent, PropertyType elementType)
+        public static string GetText(IWebElement element)
         {
-            if (elementType == PropertyType.Id)
-            {
-                return PropretiesCollection.driver.FindElement(By.Id(nameOrIdContent)).GetAttribute("value");
-            }
+            return element.GetAttribute("value");
 
-            if (elementType == PropertyType.Name)
-            {
-                return PropretiesCollection.driver.FindElement(By.Name(nameOrIdContent)).GetAttribute("value");
-            }
-            return string.Empty;
         }
 
 
 
-        public static string GetTextDDL( string nameOrIdContent, PropertyType elementType)
+        public static string GetTextDDL(IWebElement element)
         {
-            if (elementType == PropertyType.Id)
-            {                                                                       //liste             //LINQ           //Text when control with innertext                                
-                return new SelectElement(PropretiesCollection.driver.FindElement(By.Id(nameOrIdContent))).AllSelectedOptions.SingleOrDefault().Text;
-            }
 
-            if (elementType == PropertyType.Name)
-            {
-                return new SelectElement(PropretiesCollection.driver.FindElement(By.Id(nameOrIdContent))).AllSelectedOptions.SingleOrDefault().Text;
-            }
-            return string.Empty;
+            return new SelectElement(element).AllSelectedOptions.SingleOrDefault().Text;
         }
     }
 }
